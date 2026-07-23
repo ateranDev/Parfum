@@ -1,0 +1,183 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CardProduct from "../components/CardProduct.astro";
+
+// Ejemplo de array de datos para iterar sobre tu catálogo
+const products = [
+  {
+    id: 1,
+    title: "Valentino Born in Roma 100ml",
+    category: "Floral / Amaderado",
+    src: "/valentino.jpg",
+    alt: "Perfume Valentino Born in Roma",
+    price: 40,
+  },
+  {
+    id: 2,
+    title: "Spectra Amber 100ml",
+    category: "Oriental / Especiado",
+    src: "/spectra.jpg",
+    alt: "Perfume Spectra Amber",
+    price: 32,
+  },
+  {
+    id: 3,
+    title: "Bleu de Chanel 100ml",
+    category: "Fresco / Cítrico",
+    src: "/bleudechanel.jpg",
+    alt: "Perfume Bleu de Chanel",
+    price: 35,
+  },
+  {
+    id: 4,
+    title: "Club de Nuit 100ml",
+    category: "Amaderado / Intenso",
+    src: "/clubdenuit.jpg", // Cambia por tu imagen
+    alt: "Perfume Club de Nuit",
+    price: 20,
+  },
+  {
+    id: 5,
+    title: "Hawas Fire 100ml",
+    category: "Floral",
+    src: "/hawasfire.jpg", // Cambia por tu imagen
+    alt: "Perfume Rose Royale",
+    price: 25,
+  },
+  {
+    id: 6,
+    title: "Khamrah 33 100ml",
+    category: "Amaderado",
+    src: "/khamrah.jpg", // Cambia por tu imagen
+    alt: "khamrah 33",
+    price: 30,
+  },
+  {
+    id: 7,
+    title: "Lattafa 100ml",
+    category: "Amaderado",
+    src: "/lattafa.jpg", // Cambia por tu imagen
+    alt: "lattafa",
+    price: 33,
+  },
+  {
+    id: 8,
+    title: "Mandarin Sky 100ml",
+    category: "Amaderado",
+    src: "/mandarin.jpg", // Cambia por tu imagen
+    alt: "lattafa",
+    price: 33,
+  },
+  {
+    id: 9,
+    title: "Odyssey 100ml",
+    category: "Amaderado",
+    src: "/odyssey.jpg", // Cambia por tu imagen
+    alt: "Mega Odyssey",
+    price: 30,
+  },
+  {
+    id: 9,
+    title: "Sauvage DIOR 100ml",
+    category: "Amaderado",
+    src: "/sauvage.jpg", // Cambia por tu imagen
+    alt: "Sauvage DIOR",
+    price: 30,
+  },
+  {
+    id: 10,
+    title: "Valentino Green 100ml",
+    category: "Amaderado",
+    src: "/valentinowoman.jpg", // Cambia por tu imagen
+    alt: "Sauvage DIOR",
+    price: 30,
+  },
+  {
+    id: 11,
+    title: "Versace Bright 100ml",
+    category: "Amaderado",
+    src: "/versacebright.jpg", // Cambia por tu imagen
+    alt: "Versace Bright",
+    price: 25,
+  },
+  {
+    id: 12,
+    title: "Wild One ODYSSEY 100ml",
+    category: "Amaderado",
+    src: "/wildone.jpg", // Cambia por tu imagen
+    alt: "Versace Bright",
+    price: 35,
+  },
+  {
+    id: 13,
+    title: "Yara D'Lattafa 100ml",
+    category: "Yara D'Lattafa",
+    src: "/yaradlattafa.jpg", // Cambia por tu imagen
+    alt: "Yara D'Lattafa",
+    price: 35,
+  },
+  {
+    id: 14,
+    title: "Yum Yum 100ml",
+    category: "Yara D'Lattafa",
+    src: "/yumyumdlattafa.jpg", // Cambia por tu imagen
+    alt: "Yara D'Lattafa",
+    price: 35,
+  },
+];
+---
+
+<Layout
+  title="Colección Completa | J&M Parfum"
+  description="Explora nuestra colección completa de fragancias exclusivas y de autor."
+>
+  <main class="px-6 py-24 md:px-12 md:py-20 mt-28 md:mt-26 max-w-7xl mx-auto">
+    <!-- Header de la colección -->
+    <header class="text-center max-w-2xl mx-auto mb-12">
+      <span class="uppercase text-[#c5a059] tracking-[2px] font-bold text-xs">
+        Catálogo Exclusivo
+      </span>
+      <h1
+        class="uppercase text-4xl md:text-5xl font-medium mt-2 mb-4 title-serif text-[#1a1a1a]"
+      >
+        Nuestra Colección
+      </h1>
+      <p class="text-[#666666] text-sm md:text-base leading-relaxed">
+        Descubre notas aromáticas únicas diseñadas para evocar memorias y
+        emociones. Encuentra la fragancia que defina tu estilo personal.
+      </p>
+    </header>
+
+    <!-- Grid de productos -->
+    <section
+      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12 grid_productos"
+    >
+      {
+        products.map((product) => (
+          <div class="flex flex-col items-center">
+            <CardProduct
+              title={product.title}
+              src={product.src}
+              alt={product.alt}
+              price={product.price}
+            />
+            <span class="text-xs text-[#666666] mt-1 tracking-wider uppercase">
+              {product.category}
+            </span>
+          </div>
+        ))
+      }
+    </section>
+  </main>
+</Layout>
+
+<style is:global>
+  .title-serif {
+    font-family: "Cormorant Garamond", serif;
+  }
+  @media (max-width: 400px) {
+    .grid_productos {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

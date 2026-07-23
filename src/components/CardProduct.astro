@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string;
+  src: string;
+  alt: string;
+  price: number;
+}
+
+const { title, src, alt, price } = Astro.props;
+const formattedPrice = price.toFixed(2);
+---
+
+<div
+  class="group flex flex-col h-full items-center text-center p-2 sm:p-4 rounded-2xl"
+>
+  {/* Contenedor Superior: Imagen + Título */}
+  <div class="w-40 flex flex-col items-center">
+    {/* Contenedor de Imagen con Relación de Aspecto Fija */}
+    <div class="relative w-full aspect-square overflow-hidden rounded-xl mb-3">
+      <img
+        src={src}
+        alt={alt}
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+    </div>
+
+    {/* Título adaptable */}
+    <h3
+      class="font-semibold uppercase text-slate-800 text-sm sm:text-base leading-snug line-clamp-2 min-h-[2.5rem] flex items-center justify-center"
+    >
+      {title}
+    </h3>
+  </div>
+
+  {/* Contenedor Inferior: Precio + Botón */}
+  <div class="w-full mt-2">
+    <p
+      class="text-2xl sm:text-[1.1rem] font-bold text-slate-900 leading-tight mb-3"
+    >
+      ${formattedPrice}
+    </p>
+
+    <button
+      type="button"
+      class="w-full py-2.5 px-4 bg-zinc-900 hover:bg-zinc-800 text-white font-medium text-sm rounded-xl transition-colors cursor-pointer active:scale-95"
+    >
+      Seleccionar
+    </button>
+  </div>
+</div>

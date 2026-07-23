@@ -1,0 +1,83 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CardProduct from "../components/CardProduct.astro";
+---
+
+<Layout
+  title="J&M Parfum"
+  description="Fragancias exclusivas y elegantes para resaltar en cualquier ocasión"
+>
+  <main class="px-10 py-12 mt-54 md:mt-40 md:py-20 md:grid grid-cols-2">
+    <div class="flex flex-col gap-4 text-center">
+      <span class="uppercase text-[#c5a059] tracking-[1.5px] font-bold"
+        >Edición Limitada</span
+      >
+      <h1 class="uppercase text-[2.5rem] font-medium leading-12 title-hero">
+        La esencia de la elegancia
+      </h1>
+      <p class="text-[#666666] text-[.95rem]">
+        Fragancias de autor creadas con ingredientes florales y amaderados
+        seleccionados a mano. Diseñadas para dejar una huella imborrable.
+      </p>
+      <a
+        href="./colection"
+        class="uppercase w-64 mx-auto mt-4 bg-[#1a1a1a] text-[.8rem] text-white tracking-[1.5px] py-4 px-8 hover:bg-white hover:text-[#1a1a1a] border-[1px] duration-300"
+        >Explorar colección</a
+      >
+    </div>
+    <div class="">
+      <img
+        class="mx-auto rounded-lg py-8 bg-cover"
+        src="../../public/valentino.jpg"
+        width="200px"
+        alt="Hero Valentino"
+      />
+    </div>
+  </main>
+  <div class="features">
+    <div class="text-center">
+      <h2 class="text-[2.5rem] text-[#1a1a1a]">Más Vendidos</h2>
+      <p class="uppercase text-[.85rem] text-[#666666]">
+        Nuestras fragancias más icónicas
+      </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto p-4">
+      <!-- Producto 1 -->
+      <CardProduct
+        title="Valentino in Roma"
+        src="../../public/valentino.jpg"
+        alt="Valentino"
+        price={20}
+      />
+
+      <!-- Producto 2 -->
+      <CardProduct
+        title="Spectra"
+        src="../../public/spectra.jpg"
+        alt="Spectra"
+        price={20}
+      />
+
+      <!-- Producto 3 -->
+      <CardProduct
+        title="Bleu de Chanel"
+        src="../../public/bleudechanel.jpg"
+        alt="Bleu De Chanel"
+        price={20}
+      />
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  .title-hero,
+  .features {
+    font-family: "Cormorant Garamond", serif;
+  }
+
+  @media (max-width: 768px) {
+    .product {
+      width: 120px;
+    }
+  }
+</style>
