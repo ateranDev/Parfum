@@ -1,10 +1,21 @@
 ---
+import Cart from "./Cart.astro";
+
 const navLinks = [
   { href: "/colection", label: "Colección" },
   { href: "/man", label: "Hombre" },
   { href: "/women", label: "Mujer" },
   { href: "/unisex", label: "Unisex" },
 ];
+
+const response = await fetch("https://api.cotizave.com/v1/fx/rates", {
+  headers: {
+    "X-API-Key": import.meta.env.SECRET_API_KEY_BCV,
+    Accept: "application/json",
+  },
+});
+const data = await response.json();
+const firstMid = data.rates[0]?.mid;
 ---
 
 <header
@@ -17,103 +28,23 @@ const navLinks = [
   <nav
     class="flex items-center gap-6 lg:gap-10 text-xs tracking-[0.2em] font-medium uppercase text-neutral-700"
   >
-    <nav
-      class="flex items-center gap-6 lg:gap-10 text-xs tracking-[0.2em] font-medium uppercase text-neutral-700"
-    >
-      {
-        navLinks.map((link) => (
-          <a
-            href={link.href}
-            class="relative py-1 transition-colors hover:text-[#c5a059] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#c5a059] hover:after:w-full after:transition-all after:duration-300"
-          >
-            {link.label}
-          </a>
-        ))
-      }
-    </nav>
-  </nav>
-
-  <div class="relative inline-block text-left">
-    <!-- Botón / Icono del carrito -->
-    <button
-      type="button"
-      aria-label="Ver carrito"
-      class="relative p-2 text-2xl transition-transform duration-150 hover:scale-110 focus:outline-none"
-      id="btn-cart"
-    >
-      🛒
-      <!-- Badge opcional para contar productos (ejemplo: 3) -->
-      <span
-        class="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-full"
-      >
-        3
-      </span>
-    </button>
-
-    <!-- Menú desplegable del carrito -->
-    <div
-      id="cart"
-      class="hidden absolute -right-25 md:right-0 mt-2 w-80 sm:w-96 rounded-xl bg-white p-4 shadow-xl ring-1 ring-black/5 z-50"
-    >
-      <h3
-        class="text-base font-semibold text-gray-800 pb-3 border-b border-gray-100"
-      >
-        Tu Carrito
-      </h3>
-
-      <!-- Contenedor con scroll para los productos -->
-      <div class="max-h-72 overflow-y-auto divide-y divide-gray-100 my-2">
-        <!-- Producto individual (Ejemplo de ítem) -->
-        <div class="py-3 flex items-center justify-between gap-3">
-          <img
-            src="../../public/valentino.jpg"
-            alt="Valentino"
-            class="w-12 h-12 rounded-md object-cover border border-gray-100 flex-shrink-0"
-          />
-          <div class="flex-1 min-w-0">
-            <p class="text-sm font-medium text-gray-900 truncate">Valentino</p>
-            <p class="text-xs text-gray-500">$25.00 x 1</p>
-          </div>
-          <!-- Botón eliminar -->
-          <button
-            class="text-gray-400 hover:text-red-500 text-sm p-1 transition-colors"
-          >
-            ✕
-          </button>
-        </div>
-
-        <!-- Estado Vacío (Mostrar cuando no haya ítems con JS) -->
-        <!-- 
-      <div class="py-8 text-center text-gray-400 text-sm">
-        Tu carrito está vacío
-      </div> 
-      -->
-      </div>
-
-      <!-- Footer con Total y Botones de Acción -->
-      <div class="pt-3 border-t border-gray-100 space-y-3">
-        <div
-          class="flex justify-between items-center text-sm font-semibold text-gray-900"
+    {
+      navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="relative py-1 transition-colors hover:text-[#c5a059] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#c5a059] hover:after:w-full after:transition-all after:duration-300"
         >
-          <span>Total:</span>
-          <span class="text-lg font-bold text-indigo-600">$25.00</span>
-        </div>
-
-        <div class="grid grid-cols-2 gap-2">
-          <button
-            class="w-full py-2 px-3 text-xs font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
-          >
-            Vaciar
-          </button>
-          <button
-            class="w-full py-2 px-3 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-colors shadow-sm"
-          >
-            Pagar
-          </button>
-        </div>
-      </div>
-    </div>
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+  <div>
+    <p class="text-sm">
+      Tasa de cambio <strong>{parseFloat(firstMid).toFixed(2)}</strong>
+    </p>
   </div>
+  <Cart />
 </header>
 
 <style>

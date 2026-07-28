@@ -4,14 +4,15 @@ interface Props {
   src: string;
   alt: string;
   price: number;
+  id: number;
 }
 
-const { title, src, alt, price } = Astro.props;
+const { title, src, alt, price, id } = Astro.props;
 const formattedPrice = price.toFixed(2);
 ---
 
 <div
-  class="group flex flex-col h-full items-center text-center p-2 sm:p-4 rounded-2xl"
+  class="group flex flex-col h-full items-center text-center p-2 sm:p-4 rounded-2xl btn-add"
 >
   {/* Contenedor Superior: Imagen + Título */}
   <div class="w-40 flex flex-col items-center">
@@ -44,6 +45,7 @@ const formattedPrice = price.toFixed(2);
     <button
       type="button"
       class="w-full py-2.5 px-4 bg-zinc-900 hover:bg-zinc-800 text-white font-medium text-sm rounded-xl transition-colors cursor-pointer active:scale-95"
+      id={String(id)}
     >
       Seleccionar
     </button>
