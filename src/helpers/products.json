@@ -2,31 +2,27 @@
   {
     "id": 1,
     "title": "Valentino Born in Roma 100ml",
-    "category": "Floral / Amaderado",
     "src": "/valentino.jpg",
     "alt": "Perfume Valentino Born in Roma",
-    "price": 40
+    "price": 20
   },
   {
     "id": 2,
     "title": "Spectra Amber 100ml",
-    "category": "Oriental / Especiado",
     "src": "/spectra.jpg",
     "alt": "Perfume Spectra Amber",
-    "price": 32
+    "price": 20
   },
   {
     "id": 3,
     "title": "Bleu de Chanel 100ml",
-    "category": "Fresco / Cítrico",
     "src": "/bleudechanel.jpg",
     "alt": "Perfume Bleu de Chanel",
-    "price": 35
+    "price": 20
   },
   {
     "id": 4,
     "title": "Club de Nuit 100ml",
-    "category": "Amaderado / Intenso",
     "src": "/clubdenuit.jpg",
     "alt": "Perfume Club de Nuit",
     "price": 20
@@ -34,89 +30,134 @@
   {
     "id": 5,
     "title": "Hawas Fire 100ml",
-    "category": "Floral",
     "src": "/hawasfire.jpg",
     "alt": "Perfume Rose Royale",
-    "price": 25
+    "price": 20
   },
   {
     "id": 6,
     "title": "Khamrah 33 100ml",
-    "category": "Amaderado",
     "src": "/khamrah.jpg",
     "alt": "khamrah 33",
-    "price": 30
+    "price": 20
   },
   {
     "id": 7,
     "title": "Lattafa 100ml",
-    "category": "Amaderado",
     "src": "/lattafa.jpg",
     "alt": "lattafa",
-    "price": 33
+    "price": 20
   },
   {
     "id": 8,
     "title": "Mandarin Sky 100ml",
-    "category": "Amaderado",
     "src": "/mandarin.jpg",
-    "alt": "lattafa",
-    "price": 33
+    "alt": "Mandarin Sky",
+    "price": 20
   },
   {
     "id": 9,
     "title": "Odyssey 100ml",
-    "category": "Amaderado",
     "src": "/odyssey.jpg",
-    "alt": "Mega Odyssey",
-    "price": 30
+    "alt": "Odyssey",
+    "price": 20
   },
   {
     "id": 10,
     "title": "Sauvage DIOR 100ml",
-    "category": "Amaderado",
     "src": "/sauvage.jpg",
     "alt": "Sauvage DIOR",
-    "price": 30
+    "price": 20
   },
   {
     "id": 11,
     "title": "Valentino Green 100ml",
-    "category": "Amaderado",
     "src": "/valentinowoman.jpg",
-    "alt": "Sauvage DIOR",
-    "price": 30
+    "alt": "Valentino Green",
+    "price": 20
   },
   {
     "id": 12,
     "title": "Versace Bright 100ml",
-    "category": "Amaderado",
     "src": "/versacebright.jpg",
     "alt": "Versace Bright",
-    "price": 25
+    "price": 20
   },
   {
     "id": 13,
     "title": "Wild One ODYSSEY 100ml",
-    "category": "Amaderado",
     "src": "/wildone.jpg",
-    "alt": "Versace Bright",
-    "price": 35
+    "alt": "Wild One ODYSSEY",
+    "price": 20
   },
   {
     "id": 14,
     "title": "Yara D'Lattafa 100ml",
-    "category": "Yara D'Lattafa",
     "src": "/yaradlattafa.jpg",
     "alt": "Yara D'Lattafa",
-    "price": 35
+    "price": 20
   },
   {
     "id": 15,
     "title": "Yum Yum 100ml",
-    "category": "Yara D'Lattafa",
     "src": "/yumyumdlattafa.jpg",
-    "alt": "Yara D'Lattafa",
-    "price": 35
+    "alt": "Yum Yum",
+    "price": 20
+  },
+  {
+    "id": 16,
+    "title": "Acqua",
+    "src": "/acqua.jpg",
+    "alt": "Acqua",
+    "price": 20
+  },
+  {
+    "id": 17,
+    "title": "Ariana",
+    "src": "/ariana.jpg",
+    "alt": "Ariana Grande",
+    "price": 20
+  },
+  {
+    "id": 18,
+    "title": "Ariana",
+    "src": "/ariana2.jpg",
+    "alt": "Ariana Grande",
+    "price": 20
+  },
+  {
+    "id": 19,
+    "title": "Hayaati",
+    "src": "/hayaati.jpg",
+    "alt": "Hayaati",
+    "price": 20
+  },
+  {
+    "id": 20,
+    "title": "Hugo Boss",
+    "src": "/hugoboss.jpg",
+    "alt": "Hugo Boss",
+    "price": 20
+  },
+  {
+    "id": 21,
+    "title": "Invictus",
+    "src": "/invictus.jpg",
+    "alt": "Invictus",
+    "price": 20
+  },
+  {
+    "id": 22,
+    "title": "Scandal",
+    "src": "/scandal.jpg",
+    "alt": "Scandal",
+    "price": 20
+  },
+  {
+    "id": 23,
+    "title": "Swiss Army",
+    "src": "/swissarmy.jpg",
+    "alt": "Swiss Army",
+    "price": 20
   }
 ]

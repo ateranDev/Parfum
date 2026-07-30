@@ -166,3 +166,4 @@ btnPagar?.addEventListener("click", () => {
 function toggleBtnPagar() {
   if (btnPagar) btnPagar.disabled = cartItems.length === 0;
 }
+
