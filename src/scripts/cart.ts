@@ -41,7 +41,8 @@ emptyCart?.addEventListener("click", () => {
 function updateBadge() {
   const badge = document.querySelector(".absolute.top-0.right-0");
   if (badge) {
-    badge.textContent = `${cartItems.length}`;
+    badge.textContent = cartItems.length > 0 ? `${cartItems.length}` : "";
+    badge.classList.toggle("hidden", cartItems.length === 0);
   }
 }
 
@@ -117,6 +118,7 @@ function cartHTML() {
     // Agrega el HTML en el carrito
     cartList?.appendChild(div);
     updateTotal();
+    toggleBtnPagar();
   });
 
   // Agregar event listeners a los botones de eliminar
@@ -139,4 +141,28 @@ function deleteItem(index: number) {
   cartHTML();
   updateTotal();
   updateBadge();
+}
+
+// Claude
+
+const btnPagar = document.querySelector("#btn-pagar") as HTMLButtonElement;
+
+btnPagar?.addEventListener("click", () => {
+  if (cartItems.length === 0) return;
+
+  const phone = btnPagar.getAttribute("data-phone");
+
+  let mensaje = "¡Hola! Quiero hacer el siguiente pedido:\n\n";
+  cartItems.forEach((item) => {
+    mensaje += `• ${item.title} — x${item.amount} — ${item.price}\n`;
+  });
+  mensaje += `\nTotal: $${total.toFixed(2)}`;
+
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(mensaje)}`;
+  window.open(url, "_blank");
+});
+
+// Deshabilita el botón "Pagar" si el carrito está vacío
+function toggleBtnPagar() {
+  if (btnPagar) btnPagar.disabled = cartItems.length === 0;
 }
